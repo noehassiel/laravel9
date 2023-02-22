@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --black: #020202;
+    --dark: #141414;
+    --white: #f0f0f0;
+    --primary: #DA291C;
+    --grey: #707078;
+    --secondary: #548687;
+    --main-font: 'Montserrat', sans-serif;
+    --secondary-font: 'Source Code Pro', monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small,
+strong {
+    font-family: var(--main-font);
+}
+
+/*Nav*/
+.nav {
+    position: fixed;
+    height: 100vh;
+    width: 110px;
+    background: var(--dark);
+    color: var(--white);
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px 50px 30px;
+    transition: all .5s ease;
+    z-index: 10;
+}
+
+.nav .text-bg-light {
+    color: var(--white) !important;
+    background: none !important;
+    border-color: var(--white) !important;
+    border: 1px solid;
+    transition: all .5s ease;
+}
+
+.toggle-nav {
+    width: 20px;
+    height: 20px;
+    background: var(--white);
+    color: var(--black);
+    border-radius: 100px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    rotate: 0;
+    transition: all .5s ease;
+}
+
+.nav-btn {
+    color: var(--white);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#btnTextNav {
+    margin-left: 10px;
+    font-family: var(--main-font);
+    transition: all .5s ease;
+}
+
+.nav-btn.active ion-icon,
+.nav-btn.active {
+    color: var(--primary);
+}
+
+.nav-btn.active ion-icon:hover {
+    color: var(--primary);
+}
+
+.nav-btn ion-icon {
+    font-size: 20px;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--secondary);
+}
+
+.nav-btn ion-icon:hover {
+    color: var(--secondary);
+}
+
+
+.nav.open {
+    width: 200px;
+    align-items: flex-start;
+}
+
+.nav.open .g-buttons {
+    align-items: flex-start !important;
+}
+
+.nav.open .badge,
+.nav.open .toggle-nav {
+    align-self: center;
+}
+
+.nav.open .toggle-nav {
+    rotate: 180deg;
+}
+
+
+.content-wrapper {
+    padding-left: 140px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: all .3s ease;
+}
+
+.content-wrapper.short {
+    padding-left: 230px;
+}
+
+.movil-nav {
+    padding: 0 5px;
+    background: var(--dark);
+    color: var(--white);
+    height: max-content;
+    min-height: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width:768px) {
+    .nav {
+        display: none;
+    }
+
+    .content-wrapper {
+        padding: 0px;
+    }
+
+    .content-wrapper .container-fluid {
+        padding: 0px 5px;
+    }
+}
+
+/*Header*/
+.profile-pic {
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    background-color: var(--secondary);
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-pic img {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    top: 0;
+    left: -25%;
+}
+
+/*Basic elements*/
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    border: var(--primary);
+}
+
+.bg-secondary {
+    background: #F0F0F0 !important;
+    color: var(--black);
+}
+
+.bg-black {
+    background: var(--black) !important;
+    color: var(--white) !important;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.nums {
+    font-family: var(--secondary-font);
+}
+
+.loading-screen {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    background-color: #4bedc2;
+    width: 0%;
+    height: 100%;
+}
+
+.load-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 10;
+    pointer-events: none;
+}
